@@ -130,7 +130,7 @@ fun HomeScreen(navController: NavController) {
                                                 translationY = personaje.zoomY,
                                                 translationX = personaje.zoomX
                                             ),
-                                        contentScale = ContentScale.Crop,
+                                        contentScale = ContentScale.Fit,
                                         alignment = Alignment.TopCenter
                                     )
                                 }

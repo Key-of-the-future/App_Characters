@@ -8,8 +8,9 @@ val personajesLol = listOf(
     Personaje(
         nombre = "AHRI",
         descripcion = "La vastaya de nueve colas. Ahri manipula la magia del reino espiritual para confundir a sus enemigos y devorar su esencia vital, buscando siempre redención y su lugar en el mundo.",
-        zoomScale = 1.8f, zoomY = 80f, zoomX = 0f,
+        zoomScale = 2.5f, zoomY = 190f, zoomX = 0f,
         rol = "MAGO", carril = "MID",
+        vozRes = R.raw.ahri,
         habilidades = listOf(
             Habilidad("P", "Ladrona de esencias", R.drawable.ahri_1, "Se cura al golpear enemigos con habilidades."),
             Habilidad("Q", "Orbe del engaño", R.drawable.ahri_2, "Lanza un orbe que daña al ir y volver."),
@@ -19,16 +20,17 @@ val personajesLol = listOf(
         ),
         stats = mapOf("Ataque" to 30, "Defensa" to 40, "Magia" to 90, "Dificultad" to 80),
         skins = listOf(
-            Skin("Ahri", R.drawable.ahri_classic, zoomScale = 1.3f, zoomX = 0f, zoomY = 0f),
-            Skin("Ahri Guardiana Estelar", R.drawable.ahri_sg, zoomScale = 1.8f, zoomX = -190f, zoomY = 80f),
-            Skin("Ahri Challenger", R.drawable.ahri_challenger, zoomScale = 1.5f, zoomX = -90f, zoomY = 40f)
+            Skin("Ahri", R.drawable.ahri_classic, zoomScale = 1.5f, zoomX = 0f, zoomY = 0f),
+            Skin("Ahri Guardiana Estelar", R.drawable.ahri_sg, zoomScale = 1.9f, zoomX = -190f, zoomY = 20f),
+            Skin("Ahri Challenger", R.drawable.ahri_challenger, zoomScale = 1.8f, zoomX = -90f, zoomY = 10f)
         )
     ),
     Personaje(
         nombre = "AKALI",
         descripcion = "La Asesina Furtiva. Abandonó la Orden Kinkou para proteger Jonia a su manera, utilizando su arsenal de armas ninja y su agilidad letal.",
-        zoomScale = 1.8f, zoomY = 110f, zoomX = 0f,
+        zoomScale = 2.5f, zoomY = 220f, zoomX = 0f,
         rol = "ASESINO", carril = "TOP / MID",
+        vozRes = R.raw.akali,
         habilidades = listOf(
             Habilidad("P", "Marca de la asesina", R.drawable.akali_1, "Inflige daño adicional tras golpear con habilidades."),
             Habilidad("Q", "Ráfaga de cinco filos", R.drawable.akali_2, "Lanza kunáis en abanico."),
@@ -46,8 +48,9 @@ val personajesLol = listOf(
     Personaje(
         nombre = "SYNDRA",
         descripcion = "La Soberana Oscura. Una maga de Jonia con un poder inmenso que manipula esferas de energía pura para someter a quienes intentaron limitar su potencial.",
-        zoomScale = 1.8f, zoomY = 100f, zoomX = 0f,
+        zoomScale = 3.6f, zoomY = 400f, zoomX = 0f,
         rol = "MAGO", carril = "MID",
+        vozRes = R.raw.syndra_1,
         habilidades = listOf(
             Habilidad("P", "Trascendencia", R.drawable.syndra_1_1, "Syndra reúne Fragmentos de Ira al subir de nivel e infligir daño a enemigos, lo que mejora sus habilidades."),
             Habilidad("Q", "Esfera oscura", R.drawable.syndra_2_1, "Syndra conjura una esfera oscura e inflige daño mágico."),
@@ -57,9 +60,9 @@ val personajesLol = listOf(
         ),
         stats = mapOf("Ataque" to 20, "Defensa" to 30, "Magia" to 100, "Dificultad" to 80),
         skins = listOf(
-            Skin("Syndra", R.drawable.syndra_classic, zoomScale = 1.8f, zoomX = 0f, zoomY = 0f),
+            Skin("Syndra", R.drawable.syndra_classic, zoomScale = 1.95f, zoomX = 0f, zoomY = 20f),
             Skin("Syndra coven", R.drawable.syndra_coven, zoomScale = 1.8f, zoomX = 0f, zoomY = 0f),
-            Skin("Syndra deleite lunar", R.drawable.syndra_lunar_empress, zoomScale = 1.8f, zoomX = 0f, zoomY = 0f)
+            Skin("Syndra deleite lunar", R.drawable.syndra_lunar_empress, zoomScale = 2.1f, zoomX = 50f, zoomY = 0f)
         ),
         formas = listOf(
             Forma(
@@ -73,15 +76,17 @@ val personajesLol = listOf(
                     Habilidad("E", "Dispersar a los débiles (Mejorada)", R.drawable.syndra_4_2, "Aumenta la amplitud del cono y ralentiza a todos los objetivos."),
                     Habilidad("R", "Poder desatado (Mejorada)", R.drawable.syndra_5_2, "Ejecuta a los objetivos con poca vida.")
                 ),
-                zoomScale = 1.8f, zoomY = 100f, zoomX = 0f
+                vozRes = R.raw.syndra_2,
+                zoomScale = 1.95f, zoomY = 20f, zoomX = 0f
             )
         )
     ),
     Personaje(
         nombre = "SENNA",
         descripcion = "La Redentora. Tras escapar de la linterna de Thresh, utiliza el poder de la luz y la sombra para liberar a las almas perdidas en la Niebla Negra.",
-        zoomScale = 1.2f, zoomY = 40f, zoomX = 0f,
+        zoomScale = 2.5f, zoomY = 200f, zoomX = 0f,
         rol = "TIRADOR / SOPORTE", carril = "BOT",
+        vozRes = R.raw.senna,
         habilidades = listOf(
             Habilidad("P", "Absorción", R.drawable.senna_1, "Cuando las unidades mueren cerca de Senna, la Niebla Negra atrapa sus almas periódicamente. Senna puede atacar a estas almas para liberarlas, con lo que absorbe la niebla que las mantiene muertas. La niebla alimenta el poder de su cañón reliquia con daño de ataque, alcance de ataque y probabilidad de golpe crítico aumentados."),
             Habilidad("Q", "Oscuridad lacerante", R.drawable.senna_2, "Senna dispara un rayo combinado de luz y sombra contra un objetivo, lo que cura a aliados y daña a enemigos."),
@@ -91,15 +96,16 @@ val personajesLol = listOf(
         ),
         stats = mapOf("Ataque" to 75, "Defensa" to 40, "Magia" to 40, "Dificultad" to 70),
         skins = listOf(
-            Skin("Senna", R.drawable.senna_classic, zoomScale = 1.4f, zoomX = 0f, zoomY = 0f),
-            Skin("Senna True Damage", R.drawable.senna_true_damage, zoomScale = 1.4f, zoomX = 0f, zoomY = 0f),
-            Skin("Senna detective psíquica", R.drawable.senna_psychicdetective, zoomScale = 1.4f, zoomX = 0f, zoomY = 0f))
+            Skin("Senna", R.drawable.senna_classic, zoomScale = 1.75f, zoomX = 0f, zoomY = 0f),
+            Skin("Senna True Damage", R.drawable.senna_true_damage, zoomScale = 1.65f, zoomX = 0f, zoomY = 30f),
+            Skin("Senna detective psíquica", R.drawable.senna_psychicdetective, zoomScale = 1.75f, zoomX = 0f, zoomY = 0f))
     ),
     Personaje(
         nombre = "KAYN",
         descripcion = "El Segador Sombrío. Shieda Kayn, esgrime la oscura arma viviente Rhaast, inmutable ante la progresiva corrupción de su cuerpo y mente. Solo hay dos resultados posibles: o Kayn somete el arma a su voluntad... o la cuchilla malévola lo consume por completo.",
-        zoomScale = 1.4f, zoomY = 50f, zoomX = 0f,
+        zoomScale = 3.0f, zoomY = 270f, zoomX = 0f,
         rol = "ASESINO / LUCHADOR", carril = "JUNGLA",
+        vozRes = R.raw.kayn,
         habilidades = listOf(
             Habilidad("P", "La guadaña darkin", R.drawable.kayn_base, "Elige entre transformarse en Asesino o Rhaast."),
             Habilidad("Q", "Corte segador", R.drawable.kayn_1_1, "Deslizamiento y ataque circular."),
@@ -109,9 +115,9 @@ val personajesLol = listOf(
         ),
         stats = mapOf("Ataque" to 90, "Defensa" to 55, "Magia" to 20, "Dificultad" to 80),
         skins = listOf(
-            Skin("Kayn", R.drawable.kayn_classic, zoomScale = 1.5f, zoomX = 0f, zoomY = 0f),
+            Skin("Kayn", R.drawable.kayn_classic, zoomScale = 1.8f, zoomX = 0f, zoomY = 0f),
             Skin("Kayn portador del amanecer", R.drawable.kayn_dawnbringer, zoomScale = 1.5f, zoomX = 0f, zoomY = 0f),
-            Skin("Kayn Odisea", R.drawable.kayn_odyssey, zoomScale = 1.5f, zoomX = 0f, zoomY = 0f)),
+            Skin("Kayn Odisea", R.drawable.kayn_odyssey, zoomScale = 1.8f, zoomX = 0f, zoomY = 0f)),
         formas = listOf(
             Forma(
                 "Asesino Sombrío",
@@ -124,6 +130,7 @@ val personajesLol = listOf(
                     Habilidad("E", "Paso sombrío (Asesino)", R.drawable.kayn_2_3, "Obtiene un aumento de velocidad de movimiento al usarla y se vuelve inmune a ralentizaciones."),
                     Habilidad("R", "Transgresión de umbral (Asesino)", R.drawable.kayn_2_4, "Aumenta el alcance de la habilidad antes y después de salir de la posesión al enemigo.")
                 ),
+                vozRes = R.raw.kayn_assasin,
                 zoomScale = 1.9f, zoomX = 0f, zoomY = 60f
             ),
             Forma(
@@ -137,6 +144,7 @@ val personajesLol = listOf(
                     Habilidad("E", "Paso sombrío (Rhaast)", R.drawable.kayn_3_3, "Puede caminar sobre muros."),
                     Habilidad("R", "Transgresión de umbral (Rhaast)", R.drawable.kayn_3_4, "Al usarla hace daño en base a la vida del enemigo y se cura en base a esta misma.")
                 ),
+                vozRes = R.raw.kayn_rhaast,
                 zoomScale = 2.2f, zoomX = -90f, zoomY = 90f
             )
         )
@@ -144,10 +152,9 @@ val personajesLol = listOf(
     Personaje(
         nombre = "MISS FORTUNE",
         descripcion = "La Cazarrecompensas. Sarah Fortune, capitana de Aguasturbias famosa por su apariencia, pero temida por su brutalidad, es una figura severa entre los criminales más duros de la ciudad portuaria.",
-        zoomScale = 1.7f,
-        zoomY = 90f,
-        zoomX = -190f,
+        zoomScale = 3.0f, zoomY = 290f, zoomX = -220f,
         rol = "TIRADOR", carril = "BOT",
+        vozRes = R.raw.miss,
         habilidades = listOf(
             Habilidad("P", "Toque de amor", R.drawable.miss_1, "Inflige daño físico adicional cuando usa un ataque básico contra un objetivo nuevo."),
             Habilidad("Q", "Doble bala", R.drawable.miss_2, "Dispara una bala que inflige daño a un objetivo y a la unidad detrás de él."),
@@ -158,8 +165,8 @@ val personajesLol = listOf(
         stats = mapOf("Ataque" to 100, "Defensa" to 25, "Magia" to 10, "Dificultad" to 60),
         skins = listOf(
             Skin("Miss Fortune", R.drawable.miss_classic, zoomScale = 1.9f, zoomX = -280f, zoomY = 0f),
-            Skin("Miss Fortune diosa de las armas", R.drawable.miss_gun_goddess, zoomScale = 1.4f, zoomX = 0f, zoomY = 0f),
-            Skin("Miss Fortune año nuevo lunar", R.drawable.miss_ano_lunar, zoomScale = 1.8f, zoomX = -100f, zoomY = 0f))
+            Skin("Miss Fortune diosa de las armas", R.drawable.miss_gun_goddess, zoomScale = 1.8f, zoomX = 0f, zoomY = 0f),
+            Skin("Miss Fortune año nuevo lunar", R.drawable.miss_ano_lunar, zoomScale = 1.95f, zoomX = -100f, zoomY = 0f))
     )
 )
 
@@ -169,6 +176,7 @@ val personajesPokemon = listOf(
         descripcion = "Popplio es un Pokémon inicial de tipo Agua introducido en la séptima generación (región de Alola), conocido por ser un león marino azul, regordito y con aspecto de payaso.",
         zoomScale = 0.9f, zoomY = 20f, zoomX = 0f,
         rol = "AGUA", carril = "LEÓN MARINO",
+        vozRes = R.raw.poke,
         habilidades = listOf(
             Habilidad("1", "Pistola Agua", R.drawable.water_element, "Pistola agua causa daño y no tiene ningún efecto secundario.."),
             Habilidad("2", "Acua Jet", R.drawable.water_element, "Embestida rápida.")
@@ -181,6 +189,7 @@ val personajesPokemon = listOf(
         descripcion = "Fuecoco es el Pokémon inicial de tipo Fuego de la novena generación (región Paldea) en Pokémon Escarlata y Púrpura. Es el Pokémon Fuegodrilo, caracterizado por su forma de cocodrilo rojo con escamas amarillas, similar a un pimiento o \"churro\", que destaca por ser apacible, lento y con gran apetito.",
         zoomScale = 1f, zoomY = 10f, zoomX = 0f,
         rol = "FUEGO", carril = "FUEGODRILO",
+        vozRes = R.raw.poke,
         habilidades = listOf(
             Habilidad("1", "Brasas", R.drawable.fire_element, "Brasas causa daño y tiene una probabilidad del 10% de quemar al objetivo."),
             Habilidad("2", "Incinerar", R.drawable.fire_element, "Incinerar causa daño y además, quema las bayas equipadas en el objetivo, haciéndolas inservibles..")
@@ -193,6 +202,7 @@ val personajesPokemon = listOf(
         descripcion = "Oshawott es un Pokémon inicial de tipo Agua de la quinta generación (Teselia/Unova), con apariencia de nutria marina bípeda. Destaca por su pelaje blanco y azul, pecas en las mejillas y una concha (vieira) en su vientre que usa para combatir y alimentarse.",
         zoomScale = 1f, zoomY = 10f, zoomX = 0f,
         rol = "AGUA", carril = "NUTRIA",
+        vozRes = R.raw.poke,
         habilidades = listOf(
             Habilidad("1", "Concha afilada", R.drawable.water_element, "Concha afilada causa daño y tiene una probabilidad del 50% de bajar un nivel la defensa del oponente."),
             Habilidad("1", "Hidrobomba", R.drawable.water_element, "Hidrobomba causa daño y no tiene ningún efecto secundario.")),
@@ -204,6 +214,7 @@ val personajesPokemon = listOf(
         descripcion = "Fennekin es un Pokémon inicial de tipo Fuego de la sexta generación (#653), conocido como el Pokémon Zorro. Destaca por su pelaje amarillo/naranja, orejas grandes y la emisión de aire caliente por sus orejas para calmarse.",
         zoomScale = 1.1f, zoomY = -4f, zoomX = 0f,
         rol = "FUEGO", carril = "ZORRO",
+        vozRes = R.raw.poke,
         habilidades = listOf(
             Habilidad("1", "Carga de fuego", R.drawable.fire_element, "Carga de fuego causa daño y siempre aumenta un nivel la velocidad del usuario."),
             Habilidad("1", "Lluvia ígnea", R.drawable.fire_element, "Lluvia ígnea causa daño y atrapa al enemigo, evitando que escape o sea cambiado.")),
@@ -215,6 +226,7 @@ val personajesPokemon = listOf(
         descripcion = "Flabébé es un pequeño Pokémon de tipo Hada introducido en la sexta generación (669 en la Pokédex), caracterizado por aferrarse de por vida a una flor desde su nacimiento.",
         zoomScale = 1f, zoomY = 10f, zoomX = 0f,
         rol = "HADA", carril = "FLOR",
+        vozRes = R.raw.poke,
         habilidades = listOf(
             Habilidad("1", "Viento Feérrico", R.drawable.fairy_logo, "Viento feérico causa daño y no tiene ningún efecto secundario."),
             Habilidad("2", "Hoja Mágica", R.drawable.plant_element, "Hoja mágica causa daño y no tiene ningún efecto secundario. Este ataque nunca falla, ignorando cambios en la precisión del usuario y la evasión del objetivo.")
@@ -227,6 +239,7 @@ val personajesPokemon = listOf(
         descripcion = "Rowlet es un Pokémon inicial de tipo Planta/Volador introducido en la Generación 7 (región Alola), con apariencia de una pequeña lechuza redonda de colores arena y blanco. Destaca por ser sigiloso, volar sin ruido, girar su cuello 180 grados y atacar con patadas potentes o plumas afiladas.",
         zoomScale = 1.1f, zoomY = 10f, zoomX = 0f,
         rol = "PLANTA / VOLADOR", carril = "PLUMA HOJA",
+        vozRes = R.raw.poke,
         habilidades = listOf(
             Habilidad("1", "Follaje", R.drawable.plant_element, "Follaje causa daño y no tiene ningún efecto secundario."),
             Habilidad("2", "Pico Taladro", R.drawable.flying_logo, "Pico taladro causa daño y no tiene ningún efecto secundario.")
@@ -240,8 +253,9 @@ val personajesSmash = listOf(
     Personaje(
         nombre = "PIKACHU",
         descripcion = "El ratón eléctrico. Un luchador extremadamente ágil capaz de encadenar ataques eléctricos a gran velocidad.",
-        zoomScale = 0.9f, zoomY = 20f, zoomX = 8f,
+        zoomScale = 1f, zoomY = 20f, zoomX = 8f,
         rol = "POKÉMON", carril = "LIGERO",
+        vozRes = R.raw.pikachu,
         logo = R.drawable.pika_logo,
         habilidades = listOf(
             Habilidad("B", "Atactrueno", R.drawable.ic_launcher_foreground, "Descarga que recorre el suelo."),
@@ -258,8 +272,9 @@ val personajesSmash = listOf(
     Personaje(
         nombre = "KIRBY",
         descripcion = "El guerrero de Dream Land. Su habilidad característica es tragar enemigos para copiar sus poderes.",
-        zoomScale = 0.9f, zoomY = 20f, zoomX = 8f,
+        zoomScale = 1f, zoomY = 20f, zoomX = 8f,
         rol = "KIRBY", carril = "LIGERO",
+        vozRes = R.raw.kirby,
         logo = R.drawable.kirby_logo,
         habilidades = listOf(Habilidad("B", "Tragar", R.drawable.ic_launcher_foreground, "Absorbe al rival.")),
         stats = mapOf("Ataque" to 60, "Defensa" to 60, "Magia" to 70, "Dificultad" to 20),
@@ -274,6 +289,7 @@ val personajesSmash = listOf(
         descripcion = "La última Bruja de Umbra. Utiliza sus pistolas y artes mágicas para ralentizar el tiempo con sus pistolas.",
         zoomScale = 2.5f, zoomY = 190f, zoomX = 8f,
         rol = "BAYONETTA", carril = "MEDIO",
+        vozRes = R.raw.bayonetta,
         logo = R.drawable.bayo_logo,
         habilidades = listOf(
             Habilidad("B↓", "Tiempo", R.drawable.ic_launcher_foreground, "Ralentiza al enemigo tras contraatacar.")
@@ -290,6 +306,7 @@ val personajesSmash = listOf(
         descripcion = "El mercenario ex-SOLDADO. Porta la Espada Mortal y carga su barra de Límite para ataques devastadores.",
         zoomScale = 2f, zoomY = 140f, zoomX = 80f,
         rol = "FINAL FANTASY", carril = "MEDIO",
+        vozRes = R.raw.cloud,
         logo = R.drawable.ff_logo,
         habilidades = listOf(
             Habilidad("B", "Haz", R.drawable.ic_launcher_foreground, "Onda de choque cortante.")
@@ -306,22 +323,24 @@ val personajesSmash = listOf(
         descripcion = "El Ángel de una Sola Ala. Espadachín legendario con un alcance y poder oscuro abrumador.",
         zoomScale = 2.5f, zoomY = 210f, zoomX = -60f,
         rol = "FINAL FANTASY", carril = "MEDIO",
+        vozRes = R.raw.sephirot,
         logo = R.drawable.ff_logo,
         habilidades = listOf(
             Habilidad("B", "Fulgor", R.drawable.ic_launcher_foreground, "Explosión mágica de gran radio.")
         ),
         stats = mapOf("Ataque" to 100, "Defensa" to 35, "Magia" to 90, "Dificultad" to 70),
         skins = listOf(
-            Skin("SEPHIROTH", R.drawable.seph_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("SEPHIROTH GRIS", R.drawable.seph_2, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("SEPHIROTH COMBATE", R.drawable.seph_3, zoomScale = 1f, zoomX = 0f, zoomY = 0f)
+            Skin("SEPHIROTH", R.drawable.seph_1, zoomScale = 1.1f, zoomX = -10f, zoomY = 10f),
+            Skin("SEPHIROTH GRIS", R.drawable.seph_2, zoomScale = 1.1f, zoomX = -10f, zoomY = 10f),
+            Skin("SEPHIROTH COMBATE", R.drawable.seph_3, zoomScale = 1.2f, zoomX = 30f, zoomY = -10f)
         )
     ),
     Personaje(
         nombre = "ICE CLIMBERS",
         descripcion = "Popo y Nana. Este dúo inseparable coordina sus martillos para congelar oponentes.",
-        zoomScale = 1f, zoomY = -20f, zoomX = 8f,
+        zoomScale = 1f, zoomY = 10f, zoomX = 8f,
         rol = "ICE CLIMBER", carril = "MEDIO",
+        vozRes = R.raw.iceclimber,
         logo = R.drawable.ice_logo,
         habilidades = listOf(
             Habilidad("B", "Martillo", R.drawable.ic_launcher_foreground, "Deslizan bloques de hielo.")
@@ -341,6 +360,7 @@ val personajesMarvel = listOf(
         descripcion = "Wanda Maximoff es experta en aprovechar la formidable magia del caos, lanzando hexágonos con el poder de torcer y remodelar la realidad misma. ¡la energía, el espacio y la materia son meros juguetes en manos de Scarlet Witch!",
         zoomScale = 2.5f, zoomY = 155f, zoomX = 0f,
         rol = "DUELISTA", carril = "AVENGERS",
+        vozRes = R.raw.scarlet,
         logo = R.drawable.scarlet_logo,
         habilidades = listOf(
             Habilidad("Q", "Extinción de la realidad", R.drawable.scarlet_q, "Participa en vuelo libre mientras cargas energía y luego desátala para causar un daño masivo."),
@@ -349,9 +369,9 @@ val personajesMarvel = listOf(
         ),
         stats = mapOf("Ataque" to 85, "Defensa" to 60, "Magia" to 100, "Dificultad" to 50),
         skins = listOf(
-            Skin("SCARLET WITCH", R.drawable.scarletwitch, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("SCARLET WITCH ZOMBIE", R.drawable.scarletwitch_zombie, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("SCARLET WITCH MULTIVERSE", R.drawable.scarletwitch_multiverse, zoomScale = 1f, zoomX = 0f, zoomY = 0f)
+            Skin("SCARLET WITCH", R.drawable.scarletwitch, zoomScale = 1.12f, zoomX = 0f, zoomY = -15f),
+            Skin("SCARLET WITCH ZOMBIE", R.drawable.scarletwitch_zombie, zoomScale = 1.02f, zoomX = 0f, zoomY = 0f),
+            Skin("SCARLET WITCH MULTIVERSE", R.drawable.scarletwitch_multiverse, zoomScale = 1.05f, zoomX = 0f, zoomY = -10f)
         )
     ),
     Personaje(
@@ -359,6 +379,7 @@ val personajesMarvel = listOf(
         descripcion = "Como Hechicero Supremo, el Doctor Stephen Strange empuña con gracia hechizos antiguos para cambiar el rumbo incluso de la batalla más imposible. Sin embargo, la magia siempre tiene un costo, y cada uso de sus habilidades arcanas despierta gradualmente la oscuridad dentro de él.",
         zoomScale = 2.3f, zoomY = 170f, zoomX = -20f,
         rol = "VANGUARDIA", carril = "AVENGERS",
+        vozRes = R.raw.strange,
         logo = R.drawable.strange_logo,
         habilidades = listOf(
             Habilidad("Q", "Ojo de agamoto", R.drawable.strange_q, "Separa las almas de los enemigos para hacer daño."),
@@ -367,15 +388,16 @@ val personajesMarvel = listOf(
         ),
         stats = mapOf("Ataque" to 50, "Defensa" to 75, "Magia" to 95, "Dificultad" to 85),
         skins = listOf(
-            Skin("DR. STRANGE", R.drawable.strange_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("DR. STRANGE ZOMBIE", R.drawable.strange_2, zoomScale = 0.9f, zoomX = 0f, zoomY = 0f),
-            Skin("DR. STRANGE DIOS DE LA MAGIA", R.drawable.strange_3, zoomScale = 1f, zoomX = 0f, zoomY = 0f))
+            Skin("DR. STRANGE", R.drawable.strange_1, zoomScale = 1.08f, zoomX = 0f, zoomY = -10f),
+            Skin("DR. STRANGE ZOMBIE", R.drawable.strange_2, zoomScale = 1.05f, zoomX = 0f, zoomY = -10f),
+            Skin("DR. STRANGE DIOS DE LA MAGIA", R.drawable.strange_3, zoomScale = 1.05f, zoomX = 0f, zoomY = -20f))
     ),
     Personaje(
         nombre = "MAGIK",
         descripcion = "Entrenada en las artes oscuras y empuñando su poderosa Soulsword, Magik salta a través de portales para navegar por la arena con facilidad. Una vez que Illyana se transforme en la demoníaca Darkchild, todos los que se atrevan a enfrentarse a ella caerán ante su despiadada espada.",
         zoomScale = 2.5f, zoomY = 168f, zoomX = 170f,
         rol = "DUELISTA", carril = "X-MEN",
+        vozRes = R.raw.magik,
         logo = R.drawable.magik_logo,
         habilidades = listOf(
             Habilidad("Q", "Niña de la oscuridad", R.drawable.magik_q, "Transfórmate en la hija de la oscuridad y gana una mejora en todas tus habilidades básicas."),
@@ -384,15 +406,16 @@ val personajesMarvel = listOf(
         ),
         stats = mapOf("Ataque" to 90, "Defensa" to 40, "Magia" to 75, "Dificultad" to 70),
         skins = listOf(
-            Skin("MAGIK", R.drawable.magik_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("MAGIK DEMONIO FÉNIX", R.drawable.magik_2, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("MAGIK CHICA PUNK", R.drawable.magic_3, zoomScale = 1f, zoomX = 0f, zoomY = 0f))
+            Skin("MAGIK", R.drawable.magik_1, zoomScale = 1.09f, zoomX = 0f, zoomY = -10f),
+            Skin("MAGIK DEMONIO FÉNIX", R.drawable.magik_2, zoomScale = 1.06f, zoomX = 0f, zoomY = -10f),
+            Skin("MAGIK CHICA PUNK", R.drawable.magic_3, zoomScale = 1.06f, zoomX = 0f, zoomY = -10f))
     ),
     Personaje(
         nombre = "JEFF",
         descripcion = "La mayoría de los tiburones terrestres son criaturas feroces de las profundidades... ¡pero Jeff no! Este pequeño y adorable tiburón terrestre aporta un toque de alegría y curación a cada batalla. Pero si la marea cambia, Jeff puede transformarse en una bestia voraz, tragándose un ejército de enemigos en un trago gigante!",
         zoomScale = 1.5f, zoomY = 20f, zoomX = -20f,
         rol = "ESTRATEGA", carril = "INDEPENDIENTE",
+        vozRes = R.raw.jeff,
         logo = R.drawable.jeff_logo,
         habilidades = listOf(
             Habilidad("Q", "¡Es Jeff!", R.drawable.jeff_q, "Sumérgete profundamente en la escena y resurge para tragar tanto enemigos como aliados dentro del alcance."),
@@ -401,15 +424,16 @@ val personajesMarvel = listOf(
         ),
         stats = mapOf("Ataque" to 40, "Defensa" to 50, "Magia" to 30, "Dificultad" to 20),
         skins = listOf(
-            Skin("JEFF", R.drawable.jeff_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("JEFF DÚO DEVORADOR", R.drawable.jeff_2, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("JEFF DELFÍN INCÓGNITO", R.drawable.jeff_3, zoomScale = 1f, zoomX = 0f, zoomY = 0f))
+            Skin("JEFF", R.drawable.jeff_1, zoomScale = 1.2f, zoomX = -20f, zoomY = 0f),
+            Skin("JEFF DÚO DEVORADOR", R.drawable.jeff_2, zoomScale = 1.4f, zoomX = 0f, zoomY = 0f),
+            Skin("JEFF DELFÍN INCÓGNITO", R.drawable.jeff_3, zoomScale = 1.1f, zoomX = 0f, zoomY = 0f))
     ),
     Personaje(
         nombre = "STORM",
         descripcion = "Una capacidad mutante de nivel Omega para manipular patrones climáticos convierte a Ororo Munroe en una fuerza a tener en cuenta. Lluvia o brillo, truenos o relámpagos, ¡la naturaleza misma se inclina al mando de la Diosa de la Tormenta!",
         zoomScale = 2.5f, zoomY = 180f, zoomX = -180f,
         rol = "DUELISTA", carril = "X-MEN",
+        vozRes = R.raw.storm,
         logo = R.drawable.storm_logo,
         habilidades = listOf(
             Habilidad("Q", "Huracán omega", R.drawable.storm_q, "Se transforma en un huracán para atraer enemigos cercanos y causar daño."),
@@ -418,15 +442,16 @@ val personajesMarvel = listOf(
         ),
         stats = mapOf("Ataque" to 65, "Defensa" to 45, "Magia" to 95, "Dificultad" to 50),
         skins = listOf(
-            Skin("STORM", R.drawable.storm_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("STORM SIMBIONTE", R.drawable.storm_2, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("STORM DIOSA DEL TRUENO", R.drawable.storm_3, zoomScale = 1f, zoomX = 0f, zoomY = 0f))
+            Skin("STORM", R.drawable.storm_1, zoomScale = 1.18f, zoomX = 0f, zoomY = 0f),
+            Skin("STORM SIMBIONTE", R.drawable.storm_2, zoomScale = 1.2f, zoomX = 0f, zoomY = 0f),
+            Skin("STORM DIOSA DEL TRUENO", R.drawable.storm_3, zoomScale = 1.1f, zoomX = 0f, zoomY = 0f))
     ),
     Personaje(
         nombre = "LOKI",
         descripcion = "¿Qué mayor emoción hay para un Dios de la Travesura que burlar a sus enemigos? El astuto embaucador Loki usa sus ilusiones y habilidades para cambiar de forma para entrar y salir del combate, jugando con los enemigos en todo momento.",
         zoomScale = 2.5f, zoomY = 180f, zoomX = 0f,
         rol = "ESTRATEGA", carril = "PRÍNCIPE DE ASGARD",
+        vozRes = R.raw.loki,
         logo = R.drawable.loki_logo,
         habilidades = listOf(
             Habilidad("Q", "Dios de las travesuras", R.drawable.loki_q, "Cambia de forma a un aliado o héroe enemigo objetivo y usa todas sus habilidades excepto cualquiera de sus habilidades de equipo."),
@@ -435,9 +460,9 @@ val personajesMarvel = listOf(
         ),
         stats = mapOf("Ataque" to 80, "Defensa" to 85, "Magia" to 50, "Dificultad" to 60),
         skins = listOf(
-            Skin("LOKI", R.drawable.loki_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("LOKI CARNICERO", R.drawable.loki_2, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
-            Skin("LOKI SHIN SAGI-SHI", R.drawable.loki_3, zoomScale = 1f, zoomX = 0f, zoomY = 0f))
+            Skin("LOKI", R.drawable.loki_1, zoomScale = 1.05f, zoomX = 0f, zoomY = 0f),
+            Skin("LOKI CARNICERO", R.drawable.loki_2, zoomScale = 1f, zoomX = 0f, zoomY = 08f),
+            Skin("LOKI SHIN SAGI-SHI", R.drawable.loki_3, zoomScale = 1f, zoomX = 20f, zoomY = 0f))
     )
 )
 

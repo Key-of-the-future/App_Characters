@@ -26,7 +26,8 @@ data class Forma(
     //zoom de los splash
     val zoomScale: Float = 1f,
     val zoomX: Float = 0f,
-    val zoomY: Float = 0f
+    val zoomY: Float = 0f,
+    val vozRes: Int? = null // Recurso de voz para la forma
 )
 
 data class Personaje(
@@ -43,7 +44,8 @@ data class Personaje(
     val zoomY: Float = 30f,
     val zoomX: Float = 0f,
     //logo de fondo para Smash y Marvel
-    val logo: Int? = null
+    val logo: Int? = null,
+    val vozRes: Int? = null // Recurso de voz base del personaje
 )
 
 data class Categoria(

@@ -1,5 +1,6 @@
 package com.example.app_characters_list.uii
 
+import android.media.MediaPlayer
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,6 +16,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -33,10 +35,40 @@ fun DetailScreen(navController: NavController) {
     val personaje = selectedPersonaje ?: return
     val categoria = selectedCategoria
     val scrollState = rememberScrollState()
+    val context = LocalContext.current
     
     var skinIndex by remember { mutableStateOf(0) }
     var formaActual by remember { mutableStateOf<Forma?>(null) }
     
+    // MediaPlayer management
+    var mediaPlayer by remember { mutableStateOf<MediaPlayer?>(null) }
+
+    fun reproducirVoz(resId: Int?) {
+        if (resId == null) return
+        try {
+            mediaPlayer?.stop()
+            mediaPlayer?.release()
+            mediaPlayer = MediaPlayer.create(context, resId)
+            mediaPlayer?.start()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    // Play base voice on entry
+    LaunchedEffect(Unit) {
+        reproducirVoz(personaje.vozRes)
+    }
+
+    // Cleanup on dispose
+    DisposableEffect(Unit) {
+        onDispose {
+            mediaPlayer?.stop()
+            mediaPlayer?.release()
+            mediaPlayer = null
+        }
+    }
+
     val skin = personaje.skins[skinIndex]
     val primaryColor = categoria?.colorPrincipal ?: Color.Cyan
     val secondaryColor = categoria?.colorSecundario ?: Color.Black
@@ -146,9 +178,15 @@ fun DetailScreen(navController: NavController) {
 
                     if (personaje.formas.isNotEmpty()) {
                         Row(modifier = Modifier.padding(top = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            FormButton("Base", formaActual == null, primaryColor) { formaActual = null }
+                            FormButton("Base", formaActual == null, primaryColor) { 
+                                formaActual = null 
+                                reproducirVoz(personaje.vozRes)
+                            }
                             personaje.formas.forEach { forma ->
-                                FormButton(forma.nombre, formaActual == forma, primaryColor) { formaActual = forma }
+                                FormButton(forma.nombre, formaActual == forma, primaryColor) { 
+                                    formaActual = forma 
+                                    reproducirVoz(forma.vozRes)
+                                }
                             }
                         }
                     }
