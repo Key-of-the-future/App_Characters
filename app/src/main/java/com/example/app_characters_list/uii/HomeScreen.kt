@@ -1,4 +1,4 @@
-package com.example.app_characters_list.ui
+package com.example.app_characters_list.uii
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -91,41 +91,58 @@ fun HomeScreen(navController: NavController) {
                         colors = CardDefaults.cardColors(containerColor = Color.White.copy(alpha = 0.05f)),
                         border = BorderStroke(1.dp, categoriaActual.colorPrincipal.copy(alpha = 0.4f))
                     ) {
-                        Column(
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center,
-                            modifier = Modifier.fillMaxSize().padding(12.dp)
-                        ) {
-                            //zoom
-                            Box(
-                                modifier = Modifier
-                                    .size(140.dp)
-                                    .padding(bottom = 8.dp)
-                                    .clip(RoundedCornerShape(12.dp))
-                            ) {
+                        Box(modifier = Modifier.fillMaxSize()) {
+                            
+                            //logo de fondo
+                            personaje.logo?.let { logoRes ->
                                 Image(
-                                    painter = painterResource(id = personaje.skins[0].imagen),
+                                    painter = painterResource(id = logoRes),
                                     contentDescription = null,
                                     modifier = Modifier
-                                        .fillMaxSize()
-                                        .graphicsLayer(
-                                            scaleX = personaje.zoomScale,
-                                            scaleY = personaje.zoomScale,
-                                            translationY = personaje.zoomY,
-                                            translationX = personaje.zoomX
-                                        ),
-                                    contentScale = ContentScale.Crop,
-                                    alignment = Alignment.TopCenter
+                                        .align(Alignment.Center)
+                                        .size(170.dp)
+                                        .offset(y = (-20).dp),
+                                    alpha = 0.3f, 
+                                    contentScale = ContentScale.Fit
                                 )
                             }
 
-                            Text(
-                                text = personaje.nombre,
-                                style = MaterialTheme.typography.titleLarge,
-                                color = Color.White,
-                                fontWeight = FontWeight.ExtraBold,
-                                textAlign = TextAlign.Center
-                            )
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center,
+                                modifier = Modifier.fillMaxSize().padding(12.dp)
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(140.dp)
+                                        .padding(bottom = 8.dp)
+                                        .clip(RoundedCornerShape(12.dp)),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Image(
+                                        painter = painterResource(id = personaje.skins[0].imagen),
+                                        contentDescription = null,
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .graphicsLayer(
+                                                scaleX = personaje.zoomScale,
+                                                scaleY = personaje.zoomScale,
+                                                translationY = personaje.zoomY,
+                                                translationX = personaje.zoomX
+                                            ),
+                                        contentScale = ContentScale.Crop,
+                                        alignment = Alignment.TopCenter
+                                    )
+                                }
+
+                                Text(
+                                    text = personaje.nombre,
+                                    style = MaterialTheme.typography.titleLarge,
+                                    color = Color.White,
+                                    fontWeight = FontWeight.ExtraBold,
+                                    textAlign = TextAlign.Center
+                                )
+                            }
                         }
                     }
                 }

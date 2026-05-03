@@ -1,4 +1,4 @@
-package com.example.app_characters_list.ui
+package com.example.app_characters_list.uii
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -16,6 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -31,7 +33,7 @@ fun DetailScreen(navController: NavController) {
     val personaje = selectedPersonaje ?: return
     val categoria = selectedCategoria
     val scrollState = rememberScrollState()
-
+    
     var skinIndex by remember { mutableStateOf(0) }
     var formaActual by remember { mutableStateOf<Forma?>(null) }
     
@@ -39,27 +41,27 @@ fun DetailScreen(navController: NavController) {
     val primaryColor = categoria?.colorPrincipal ?: Color.Cyan
     val secondaryColor = categoria?.colorSecundario ?: Color.Black
 
-    //código para las distintas especificaciones jeje
-    val (labelRol, labelCarril, labelSkins) = when (categoria?.nombre) {
-        "LoL" -> Triple("ROL", "CARRIL", "SKINS")
-        "Pokemon" -> Triple("TIPO", "ESPECIE", "EVOLUCIONES")
-        "Smash" -> Triple("SERIE", "PESO", "TRAJES")
-        "Marvel" -> Triple("CLASE", "AFILIACIÓN", "SKINS")
-        else -> Triple("ROL", "CARRIL", "SKINS")
+    val customFont = remember(categoria?.fuenteRes) {
+        categoria?.fuenteRes?.let { FontFamily(Font(it)) } ?: FontFamily.Default
     }
 
-    //datos para lolcito y sus formas
+    val (labelRol, labelCarril) = when (categoria?.nombre) {
+        "LoL" -> Pair("ROL", "CARRIL")
+        "Pokemon" -> Pair("TIPO", "ESPECIE")
+        "Smash" -> Pair("SERIE", "PESO")
+        "Marvel" -> Pair("CLASE", "AFILIACIÓN")
+        else -> Pair("ROL", "CARRIL")
+    }
+
     val imagenAMostrar = formaActual?.imagen ?: skin.imagen
     val descripcionAMostrar = formaActual?.descripcion ?: personaje.descripcion
     val habilidadesAMostrar = formaActual?.habilidades ?: personaje.habilidades
-    
-    //código para poder escalar las imágenes y splash jsjs
     val zoomScaleAMostrar = formaActual?.zoomScale ?: skin.zoomScale
     val zoomXAMostrar = formaActual?.zoomX ?: skin.zoomX
     val zoomYAMostrar = formaActual?.zoomY ?: skin.zoomY
 
     Box(modifier = Modifier.fillMaxSize()) {
-        //cambio de fondo
+        //fondo e imagen base
         Image(
             painter = painterResource(id = categoria?.fondo ?: personaje.skins[0].imagen),
             contentDescription = null,
@@ -78,7 +80,6 @@ fun DetailScreen(navController: NavController) {
         ) {
             Spacer(modifier = Modifier.height(60.dp))
 
-            // card principal
             Card(
                 colors = CardDefaults.cardColors(containerColor = Color.White.copy(alpha = 0.1f)),
                 shape = RoundedCornerShape(28.dp),
@@ -94,21 +95,23 @@ fun DetailScreen(navController: NavController) {
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        IconButton(
-                            onClick = { 
-                                formaActual = null 
-                                skinIndex = (skinIndex - 1 + personaje.skins.size) % personaje.skins.size 
-                            }
-                        ) {
+                        IconButton(onClick = {
+                            formaActual = null
+                            skinIndex = (skinIndex - 1 + personaje.skins.size) % personaje.skins.size
+                        }) {
                             Icon(Icons.AutoMirrored.Filled.KeyboardArrowLeft, null, tint = primaryColor, modifier = Modifier.size(45.dp))
                         }
 
-                        // box para el zoom
+                        // card para imagen
                         Box(
                             modifier = Modifier
                                 .size(260.dp)
-                                .clip(RoundedCornerShape(20.dp))
+                                .clip(RoundedCornerShape(24.dp))
+                                .background(Color.Black.copy(alpha = 0.1f))
+                                .border(1.dp, primaryColor.copy(alpha = 0.2f), RoundedCornerShape(24.dp)),
+                            contentAlignment = Alignment.Center
                         ) {
+                            // imagen perso
                             Image(
                                 painter = painterResource(id = imagenAMostrar),
                                 contentDescription = null,
@@ -120,16 +123,14 @@ fun DetailScreen(navController: NavController) {
                                         translationX = zoomXAMostrar,
                                         translationY = zoomYAMostrar
                                     ),
-                                contentScale = ContentScale.Fit
+                                contentScale = ContentScale.Fit // FIT evita el recorte previo de la fuente
                             )
                         }
 
-                        IconButton(
-                            onClick = { 
-                                formaActual = null
-                                skinIndex = (skinIndex + 1) % personaje.skins.size 
-                            }
-                        ) {
+                        IconButton(onClick = {
+                            formaActual = null
+                            skinIndex = (skinIndex + 1) % personaje.skins.size
+                        }) {
                             Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = primaryColor, modifier = Modifier.size(45.dp))
                         }
                     }
@@ -138,20 +139,16 @@ fun DetailScreen(navController: NavController) {
                         text = formaActual?.nombre ?: skin.nombre,
                         style = MaterialTheme.typography.headlineMedium,
                         color = Color.White,
+                        fontFamily = customFont,
                         fontWeight = FontWeight.ExtraBold,
                         modifier = Modifier.padding(top = 12.dp)
                     )
 
                     if (personaje.formas.isNotEmpty()) {
-                        Row(
-                            modifier = Modifier.padding(top = 16.dp),
-                            horizontalArrangement = Arrangement.spacedBy(8.dp)
-                        ) {
+                        Row(modifier = Modifier.padding(top = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             FormButton("Base", formaActual == null, primaryColor) { formaActual = null }
                             personaje.formas.forEach { forma ->
-                                FormButton(forma.nombre, formaActual == forma, primaryColor) {
-                                    formaActual = forma
-                                }
+                                FormButton(forma.nombre, formaActual == forma, primaryColor) { formaActual = forma }
                             }
                         }
                     }
@@ -160,7 +157,7 @@ fun DetailScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            //card de la info
+            // tarjeta info
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(24.dp),
@@ -180,7 +177,7 @@ fun DetailScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            //card para las estadísticas de los perso
+            // estats
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(24.dp),
@@ -198,7 +195,7 @@ fun DetailScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            //card para las habilidades
+            // habilidades
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(24.dp),
@@ -249,9 +246,18 @@ fun FormButton(nombre: String, isSelected: Boolean, color: Color, onClick: () ->
 fun HabilidadItem(habilidad: Habilidad, primaryColor: Color) {
     Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.Top) {
         Box(modifier = Modifier.size(64.dp).border(2.dp, primaryColor, RoundedCornerShape(8.dp)).padding(2.dp)) {
-            Image(painter = painterResource(id = habilidad.imagen), null, modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(6.dp)), contentScale = ContentScale.Crop)
+            Image(
+                painter = painterResource(id = habilidad.imagen),
+                null,
+                modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(6.dp)),
+                contentScale = ContentScale.Crop
+            )
             if (habilidad.tecla.isNotEmpty()) {
-                Surface(color = primaryColor, modifier = Modifier.align(Alignment.BottomEnd).size(20.dp), shape = RoundedCornerShape(topStart = 4.dp)) {
+                Surface(
+                    color = primaryColor,
+                    modifier = Modifier.align(Alignment.BottomEnd).size(20.dp),
+                    shape = RoundedCornerShape(topStart = 4.dp)
+                ) {
                     Text(text = habilidad.tecla, color = Color.Black, fontSize = 12.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
                 }
             }
@@ -280,7 +286,15 @@ fun StatBar(nombre: String, valor: Int, primaryColor: Color) {
             Text("$valor%", color = primaryColor, fontSize = 14.sp, fontWeight = FontWeight.Bold)
         }
         Box(modifier = Modifier.fillMaxWidth().height(8.dp).background(Color.White.copy(alpha = 0.1f), RoundedCornerShape(4.dp))) {
-            Box(modifier = Modifier.fillMaxWidth(valor / 100f).height(8.dp).background(Brush.horizontalGradient(listOf(primaryColor, primaryColor.copy(alpha = 0.6f))), RoundedCornerShape(4.dp)))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(valor / 100f)
+                    .height(8.dp)
+                    .background(
+                        Brush.horizontalGradient(listOf(primaryColor, primaryColor.copy(alpha = 0.6f))),
+                        RoundedCornerShape(4.dp)
+                    )
+            )
         }
     }
 }

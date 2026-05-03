@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.app_characters_list.ui.HomeScreen
-import com.example.app_characters_list.ui.DetailScreen
+import com.example.app_characters_list.uii.HomeScreen
+import com.example.app_characters_list.uii.DetailScreen
 
 @Composable
 fun AppNavigation() {

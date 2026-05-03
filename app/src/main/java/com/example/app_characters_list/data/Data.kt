@@ -41,7 +41,9 @@ data class Personaje(
     //zoom de skins
     val zoomScale: Float = 1.8f,
     val zoomY: Float = 30f,
-    val zoomX: Float = 0f
+    val zoomX: Float = 0f,
+    //logo de fondo para Smash y Marvel
+    val logo: Int? = null
 )
 
 data class Categoria(
@@ -49,5 +51,6 @@ data class Categoria(
     val fondo: Int,
     val personajes: List<Personaje>,
     val colorPrincipal: Color,
-    val colorSecundario: Color
+    val colorSecundario: Color,
+    val fuenteRes: Int? = null, // Fuente personalizada
 )
