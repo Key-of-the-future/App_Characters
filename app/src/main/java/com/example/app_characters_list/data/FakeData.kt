@@ -3,7 +3,6 @@ package com.example.app_characters_list.data
 import androidx.compose.ui.graphics.Color
 import com.example.app_characters_list.R
 
-// --- LEAGUE OF LEGENDS ---
 val personajesLol = listOf(
     Personaje(
         nombre = "AHRI",
@@ -182,7 +181,7 @@ val personajesPokemon = listOf(
             Habilidad("2", "Acua Jet", R.drawable.water_element, "Embestida rápida.")
         ),
         stats = mapOf("Ataque" to 55, "Defensa" to 50, "Magia" to 70, "Dificultad" to 30),
-        skins = listOf(Skin("Popplio", R.drawable.popplio), Skin("Brionne", R.drawable.brionne), Skin("Primarina", R.drawable.primarina))
+        skins = listOf(Skin("Popplio N.°0728", R.drawable.popplio), Skin("Brionne N.°0729", R.drawable.brionne), Skin("Primarina N.°0730", R.drawable.primarina))
     ),
     Personaje(
         nombre = "FUECOCO",
@@ -195,7 +194,7 @@ val personajesPokemon = listOf(
             Habilidad("2", "Incinerar", R.drawable.fire_element, "Incinerar causa daño y además, quema las bayas equipadas en el objetivo, haciéndolas inservibles..")
         ),
         stats = mapOf("Ataque" to 70, "Defensa" to 80, "Magia" to 50, "Dificultad" to 20),
-        skins = listOf(Skin("Fuecoco", R.drawable.fuecoco), Skin("Crocalor", R.drawable.crocalor), Skin("Skeledirge", R.drawable.skeledirge))
+        skins = listOf(Skin("Fuecoco N.°0909", R.drawable.fuecoco), Skin("Crocalor N.°0910", R.drawable.crocalor), Skin("Skeledirge N.°0911", R.drawable.skeledirge))
     ),
     Personaje(
         nombre = "OSHAWOTT",
@@ -207,7 +206,7 @@ val personajesPokemon = listOf(
             Habilidad("1", "Concha afilada", R.drawable.water_element, "Concha afilada causa daño y tiene una probabilidad del 50% de bajar un nivel la defensa del oponente."),
             Habilidad("1", "Hidrobomba", R.drawable.water_element, "Hidrobomba causa daño y no tiene ningún efecto secundario.")),
         stats = mapOf("Ataque" to 75, "Defensa" to 60, "Magia" to 85, "Dificultad" to 30),
-        skins = listOf(Skin("Oshawott", R.drawable.oshawott), Skin("Dewott", R.drawable.dewott), Skin("Samurott", R.drawable.samurott))
+        skins = listOf(Skin("Oshawott N.°0501", R.drawable.oshawott), Skin("Dewott N.°0502", R.drawable.dewott), Skin("Samurott N.°0503", R.drawable.samurott))
     ),
     Personaje(
         nombre = "FENNEKIN",
@@ -219,7 +218,7 @@ val personajesPokemon = listOf(
             Habilidad("1", "Carga de fuego", R.drawable.fire_element, "Carga de fuego causa daño y siempre aumenta un nivel la velocidad del usuario."),
             Habilidad("1", "Lluvia ígnea", R.drawable.fire_element, "Lluvia ígnea causa daño y atrapa al enemigo, evitando que escape o sea cambiado.")),
         stats = mapOf("Ataque" to 50, "Defensa" to 55, "Magia" to 95, "Dificultad" to 40),
-        skins = listOf(Skin("Fennekin", R.drawable.fennekin), Skin("Braixen", R.drawable.braixen), Skin("Delphox", R.drawable.delphox))
+        skins = listOf(Skin("Fennekin N.°0653", R.drawable.fennekin), Skin("Braixen N.°0654", R.drawable.braixen), Skin("Delphox N.°0655", R.drawable.delphox))
     ),
     Personaje(
         nombre = "FLABÉBÉ",
@@ -232,7 +231,7 @@ val personajesPokemon = listOf(
             Habilidad("2", "Hoja Mágica", R.drawable.plant_element, "Hoja mágica causa daño y no tiene ningún efecto secundario. Este ataque nunca falla, ignorando cambios en la precisión del usuario y la evasión del objetivo.")
         ),
         stats = mapOf("Ataque" to 40, "Defensa" to 60, "Magia" to 95, "Dificultad" to 50),
-        skins = listOf(Skin("Flabébé", R.drawable.flab_b_), Skin("Floette", R.drawable.floette), Skin("Florges", R.drawable.florges))
+        skins = listOf(Skin("Flabébé N.°0669", R.drawable.flab_b_), Skin("Floette N.°0670", R.drawable.floette), Skin("Florges N.°0671", R.drawable.florges))
     ),
     Personaje(
         nombre = "ROWLET",
@@ -245,7 +244,7 @@ val personajesPokemon = listOf(
             Habilidad("2", "Pico Taladro", R.drawable.flying_logo, "Pico taladro causa daño y no tiene ningún efecto secundario.")
         ),
         stats = mapOf("Ataque" to 70, "Defensa" to 65, "Magia" to 60, "Dificultad" to 30),
-        skins = listOf(Skin("Rowlet", R.drawable.rowlet), Skin("Dartrix", R.drawable.dartrix), Skin("Decidueye", R.drawable.decidueye))
+        skins = listOf(Skin("Rowlet N.°0722", R.drawable.rowlet), Skin("DartrixN.°0723", R.drawable.dartrix), Skin("Decidueye N.°0724", R.drawable.decidueye))
     )
 )
 
@@ -258,9 +257,9 @@ val personajesSmash = listOf(
         vozRes = R.raw.pikachu,
         logo = R.drawable.pika_logo,
         habilidades = listOf(
-            Habilidad("B", "Atactrueno", R.drawable.ic_launcher_foreground, "Descarga que recorre el suelo."),
-            Habilidad("B↑", "Agilidad", R.drawable.ic_launcher_foreground, "Desplazamiento rápido."),
-            Habilidad("B↓", "Trueno", R.drawable.ic_launcher_foreground, "Rayo potente.")
+            Habilidad("B", "Atactrueno", R.drawable.pika_logo, "Descarga que recorre el suelo."),
+            Habilidad("B↑", "Agilidad", R.drawable.pika_logo, "Desplazamiento rápido."),
+            Habilidad("B↓", "Trueno", R.drawable.pika_logo, "Rayo potente.")
         ),
         stats = mapOf("Ataque" to 70, "Defensa" to 70, "Magia" to 50, "Dificultad" to 30),
         skins = listOf(
@@ -276,7 +275,7 @@ val personajesSmash = listOf(
         rol = "KIRBY", carril = "LIGERO",
         vozRes = R.raw.kirby,
         logo = R.drawable.kirby_logo,
-        habilidades = listOf(Habilidad("B", "Tragar", R.drawable.ic_launcher_foreground, "Absorbe al rival.")),
+        habilidades = listOf(Habilidad("B", "Absorber", R.drawable.kirby_logo, "Absorbe al rival.")),
         stats = mapOf("Ataque" to 60, "Defensa" to 60, "Magia" to 70, "Dificultad" to 20),
         skins = listOf(
             Skin("KIRBY", R.drawable.kirby_1, zoomScale = 1f, zoomX = 0f, zoomY = 0f),
@@ -292,7 +291,7 @@ val personajesSmash = listOf(
         vozRes = R.raw.bayonetta,
         logo = R.drawable.bayo_logo,
         habilidades = listOf(
-            Habilidad("B↓", "Tiempo", R.drawable.ic_launcher_foreground, "Ralentiza al enemigo tras contraatacar.")
+            Habilidad("B↓", "Tiempo", R.drawable.bayo_logo, "Ralentiza al enemigo tras contraatacar.")
         ),
         stats = mapOf("Ataque" to 80, "Defensa" to 40, "Magia" to 95, "Dificultad" to 90),
         skins = listOf(
@@ -309,7 +308,7 @@ val personajesSmash = listOf(
         vozRes = R.raw.cloud,
         logo = R.drawable.ff_logo,
         habilidades = listOf(
-            Habilidad("B", "Haz", R.drawable.ic_launcher_foreground, "Onda de choque cortante.")
+            Habilidad("B", "Haz", R.drawable.ff_logo, "Onda de choque cortante.")
         ),
         stats = mapOf("Ataque" to 95, "Defensa" to 60, "Magia" to 50, "Dificultad" to 40),
         skins = listOf(
@@ -326,7 +325,7 @@ val personajesSmash = listOf(
         vozRes = R.raw.sephirot,
         logo = R.drawable.ff_logo,
         habilidades = listOf(
-            Habilidad("B", "Fulgor", R.drawable.ic_launcher_foreground, "Explosión mágica de gran radio.")
+            Habilidad("B", "Fulgor", R.drawable.ff_logo, "Explosión mágica de gran radio.")
         ),
         stats = mapOf("Ataque" to 100, "Defensa" to 35, "Magia" to 90, "Dificultad" to 70),
         skins = listOf(
@@ -343,7 +342,7 @@ val personajesSmash = listOf(
         vozRes = R.raw.iceclimber,
         logo = R.drawable.ice_logo,
         habilidades = listOf(
-            Habilidad("B", "Martillo", R.drawable.ic_launcher_foreground, "Deslizan bloques de hielo.")
+            Habilidad("B", "Martillo", R.drawable.ice_logo, "Deslizan bloques de hielo.")
         ),
         stats = mapOf("Ataque" to 70, "Defensa" to 60, "Magia" to 30, "Dificultad" to 85),
         skins = listOf(
@@ -357,7 +356,7 @@ val personajesSmash = listOf(
 val personajesMarvel = listOf(
     Personaje(
         nombre = "SCARLET WITCH",
-        descripcion = "Wanda Maximoff es experta en aprovechar la formidable magia del caos, lanzando hexágonos con el poder de torcer y remodelar la realidad misma. ¡la energía, el espacio y la materia son meros juguetes en manos de Scarlet Witch!",
+        descripcion = "Wanda Maximoff es experta en aprovechar la formidable magia del caos, lanzando hexágonos con el poder de torcer y remodelar la realidad misma. ¡La energía, el espacio y la materia son meros juguetes en manos de Scarlet Witch!",
         zoomScale = 2.5f, zoomY = 155f, zoomX = 0f,
         rol = "DUELISTA", carril = "AVENGERS",
         vozRes = R.raw.scarlet,

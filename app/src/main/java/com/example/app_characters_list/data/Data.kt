@@ -54,5 +54,4 @@ data class Categoria(
     val personajes: List<Personaje>,
     val colorPrincipal: Color,
     val colorSecundario: Color,
-    val fuenteRes: Int? = null, // Fuente personalizada
-)
+    val fuenteRes: Int? = null)

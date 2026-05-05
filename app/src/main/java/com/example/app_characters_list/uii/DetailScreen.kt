@@ -155,7 +155,7 @@ fun DetailScreen(navController: NavController) {
                                         translationX = zoomXAMostrar,
                                         translationY = zoomYAMostrar
                                     ),
-                                contentScale = ContentScale.Fit // FIT evita el recorte previo de la fuente
+                                contentScale = ContentScale.Fit
                             )
                         }
 
@@ -296,7 +296,14 @@ fun HabilidadItem(habilidad: Habilidad, primaryColor: Color) {
                     modifier = Modifier.align(Alignment.BottomEnd).size(20.dp),
                     shape = RoundedCornerShape(topStart = 4.dp)
                 ) {
-                    Text(text = habilidad.tecla, color = Color.Black, fontSize = 12.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+                    Text(
+                        text = habilidad.tecla, 
+                        color = Color.Black, 
+                        fontSize = 12.sp, 
+                        fontWeight = FontWeight.Bold, 
+                        textAlign = TextAlign.Center,
+                        fontFamily = FontFamily.Default
+                    )
                 }
             }
         }
@@ -312,7 +319,13 @@ fun HabilidadItem(habilidad: Habilidad, primaryColor: Color) {
 fun InfoItem(label: String, value: String, primaryColor: Color) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(label, color = Color.Gray, fontSize = 11.sp, fontWeight = FontWeight.Bold)
-        Text(value, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+        Text(
+            text = value, 
+            color = Color.White, 
+            fontWeight = FontWeight.Bold, 
+            fontSize = 18.sp,
+            fontFamily = FontFamily.Default
+        )
     }
 }
 
@@ -321,7 +334,13 @@ fun StatBar(nombre: String, valor: Int, primaryColor: Color) {
     Column(modifier = Modifier.padding(bottom = 12.dp)) {
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Text(nombre, color = Color.White, fontSize = 14.sp)
-            Text("$valor%", color = primaryColor, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+            Text(
+                text = "$valor%", 
+                color = primaryColor, 
+                fontSize = 14.sp, 
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Default
+            )
         }
         Box(modifier = Modifier.fillMaxWidth().height(8.dp).background(Color.White.copy(alpha = 0.1f), RoundedCornerShape(4.dp))) {
             Box(
